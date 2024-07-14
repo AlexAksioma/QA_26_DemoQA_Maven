@@ -65,6 +65,7 @@ public class AutomationPracticeFormPage extends BasePage{
         fieldCity.sendKeys(student.getCity());
         fieldCity.sendKeys(Keys.ENTER);
 
+
         return this;
     }
     public AutomationPracticeFormPage clickBtnSubmit(){
@@ -72,7 +73,7 @@ public class AutomationPracticeFormPage extends BasePage{
         return this;
     }
 
-    private void typeHobbies(List<Hobbies> hobbies) {
+    private void typeHobbies(List<Hobbies> hobbies) { //!!!!!!!!!! merge
         for (Hobbies h: hobbies) {
             switch (h){
                 case MUSIC:
@@ -112,7 +113,14 @@ public class AutomationPracticeFormPage extends BasePage{
         WebElement elementGender = driver.findElement(By.xpath(gender.getLocator()));
         elementGender.click();
     }
+    public AutomationPracticeFormPage clickBtnClose(){
+        btnCloseModal.click();
+        return this;
+    }
     public boolean isElementPresent_btnCloseModal(){
-        return isElementPresentWithWait(textThanksFor, 5);
+        return isElementPresentWithWait(btnCloseModal, 5);
+    }
+    public boolean isTextToBePresent_textThanksFor(){
+        return isTextToBePresent(textThanksFor, "Thanks for submitting the form", 5);
     }
 }

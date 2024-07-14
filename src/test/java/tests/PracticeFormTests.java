@@ -37,7 +37,9 @@ public class PracticeFormTests extends ApplicationManager {
                 .clickBtnPracticeForm()
                 .typeStudentForm(student)
                 .clickBtnSubmit()
-                .isElementPresent_btnCloseModal())
+                        //.clickBtnClose()
+                //.isElementPresent_btnCloseModal())
+                .isTextToBePresent_textThanksFor())
         ;
     }
 
